@@ -1,0 +1,15 @@
+node_modules/
+web/dist/
+functions/lib/
+.env
+.env.local
+.env.*.local
+*-debug.log
+.firebase/
+test-results/
+playwright-report/
+
+compile-functions.log
+install.log
+*.tsbuildinfo
+.firebase-web-config.json

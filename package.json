@@ -1,0 +1,21 @@
+{
+  "name": "unnichat-broadcast",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "web",
+    "functions"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w functions && npm run build -w web",
+    "test": "npm run test -w functions",
+    "test:integration": "npm run build -w functions && firebase emulators:exec --project demo-unnichat --only auth,firestore,functions \"node tests/integration.mjs\"",
+    "emulators": "firebase emulators:start --project demo-unnichat --only auth,firestore,functions",
+    "deploy": "npm run build && firebase deploy --project unnichat-lucas-20261017 --account lucasmzerino@gmail.com --only firestore,functions,hosting"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.0.0",
+    "@firebase/rules-unit-testing": "^4.0.0"
+  }
+}
